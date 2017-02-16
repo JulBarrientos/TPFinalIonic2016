@@ -53,17 +53,21 @@ function ($scope, $stateParams) {
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams,Batallas) {
-    $scope.Batalla = {};
-    $scope.botonPrueba = function(){
-        Batallas.$add({
+    $scope.Batalla = {
                         "P1":"",
                         "P2":"",
-                        "jugador1":[0,0,0,0],
+                        "jugador1":[0,1,0,0],
                         "jugador2":[0,0,0,0],
                         "acertoJ1":false,
                         "acertoJ2":false,
-                        "monto": $scope.Batalla.monto
-                      });      
+                        "monto": ""
+                      };
+    $scope.botonPrueba = function(){
+        Batallas.$add($scope.Batalla);      
+    }
+    $scope.selectCasilla = function(valores){
+     
+      $scope.Batalla.jugador1 = valores;
     }
 
 }])
