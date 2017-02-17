@@ -56,7 +56,7 @@ function ($scope, $stateParams,Batallas) {
     $scope.Batalla = {
                         "P1":"",
                         "P2":"",
-                        "jugador1":[0,1,0,0],
+                        "jugador1":[0,0,0,0],
                         "jugador2":[0,0,0,0],
                         "acertoJ1":false,
                         "acertoJ2":false,
