@@ -1,4 +1,6 @@
 # TPFinalIonic2016
+Firebase: https://batalla-naval-de-la-muerte.firebaseapp.com/
+IonicView: C08E136D
 Dos arrays, uno para cada jugador. Cada posicion es un casilla, y se almacena la cantidad apostada para esa casilla
 Para elegir casilla, clickear en boton e ingresar monton en input. Al clickear en boton "Crear Batalla" verificar que se tenga monto disponible, y si se tiene se crea y resta los creditos usados
 Al elegir una partida creada, elegir tu casilla igual que al crear
