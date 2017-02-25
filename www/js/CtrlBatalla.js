@@ -58,7 +58,8 @@ angular.module('app.controllers')
 
 
     $scope.comenzarBatalla = function(){
-      angular.forEach($scope.Batalla.jugador1, function(count) {
+      var flagVacio =true;
+      angular.forEach($scope.Batalla.jugador2, function(count) {
           if(count==1){
             flagVacio=false;
           }

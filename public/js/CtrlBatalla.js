@@ -58,27 +58,40 @@ angular.module('app.controllers')
 
 
     $scope.comenzarBatalla = function(){
-      if(misCreditos>=$scope.Batalla.monto){
-        var ref = new Firebase('https://batalla-naval-de-la-muerte.firebaseio.com/Batallas/'+$scope.Batalla.$id);
-        ref.update({
-            "turno":"J1",
-            "P2":firebase.auth().currentUser.displayName+"-"+firebase.auth().currentUser.uid,
-            "jugador2":$scope.Batalla.jugador2
+      var flagVacio =true;
+      angular.forEach($scope.Batalla.jugador2, function(count) {
+          if(count==1){
+            flagVacio=false;
+          }
         });
-        var ref = new Firebase("https://batalla-naval-de-la-muerte.firebaseio.com/Usuarios/" + keyCred);
-          ref.update({
-            creditos: misCreditos-$scope.Batalla.monto        
-          });
-        location.href="#/side-menu21/page1";  
-      } else{
-           var myPopup = $ionicPopup.show({
-                  template: 'Creditos Insuficientes',
-                  title: 'Nop'
+         if(!flagVacio){
+          if(misCreditos>=$scope.Batalla.monto){
+            var ref = new Firebase('https://batalla-naval-de-la-muerte.firebaseio.com/Batallas/'+$scope.Batalla.$id);
+            ref.update({
+                "turno":"J1",
+                "P2":firebase.auth().currentUser.displayName+"-"+firebase.auth().currentUser.uid,
+                "jugador2":$scope.Batalla.jugador2
             });
-            $timeout(function(){
-           myPopup.close();
-          }, 2000);
-        } 
+            var ref = new Firebase("https://batalla-naval-de-la-muerte.firebaseio.com/Usuarios/" + keyCred);
+              ref.update({
+                creditos: misCreditos-$scope.Batalla.monto        
+              });
+            location.href="#/side-menu21/page1";  
+          } else{
+              var myPopup = $ionicPopup.show({
+                      template: 'Creditos Insuficientes',
+                      title: 'Nop'
+                });
+                $timeout(function(){
+              myPopup.close();
+              }, 2000);
+            } 
+         } else{
+              var myPopup = $ionicPopup.alert({
+              template: 'No elegiste posición para tu barquito',
+              title: 'Nop'
+              });
+       }
     }
 
 
