@@ -31,9 +31,15 @@ angular.module('app.routes', [])
   })
 
   .state('login', {
-    url: '/page4',
+    url: '/login',
     templateUrl: 'templates/login.html',
     controller: 'loginCtrl'
+  })
+
+  .state('registro', {
+    url: '/registro', 
+    templateUrl: 'templates/registro.html',
+    controller: 'registroCtrl'
   })
 
   .state('menu.batalla', {
@@ -51,7 +57,7 @@ angular.module('app.routes', [])
     views: {
       'side-menu21': {
         templateUrl: 'templates/creditos.html',
-        controller: 'creditosCtrl'
+        controller: 'creditoCtrl'
       }
     }
   })
@@ -66,7 +72,7 @@ angular.module('app.routes', [])
     }
   })
 
-$urlRouterProvider.otherwise('/side-menu21/page1')
+$urlRouterProvider.otherwise('/login')
 
   
 

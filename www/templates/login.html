@@ -1,19 +1,29 @@
-<ion-view title="Login" id="page4">
-  <ion-content padding="true" class="has-header">
-    <form id="login-form1" class="list">
-      <ion-list id="login-list2">
-        <label class="item item-input" id="login-input1">
-          <span class="input-label">Username</span>
-          <input type="text" placeholder="">
+<ion-view hide-nav-bar="true">
+  <ion-header-bar>
+    <h1 >Logear</h1>
+    <div class="buttons">
+    </div>
+  </ion-header-bar>
+  <ion-content ">
+    <form ng-submit="Loguear()" >
+      <div class="list login" >
+        <label class="item item-input  inputLogin" >
+          <span class="input-label ">Email</span>
+          <input type="text" ng-model="loginData.email" class="">
         </label>
-        <label class="item item-input" id="login-input2">
-          <span class="input-label">Password</span>
-          <input type="password" placeholder="">
+
+        <label class="item item-input  inputLogin" >
+          <span class="input-label ">Password</span>
+          <input type="password" ng-model="loginData.password" class="">
         </label>
-      </ion-list>
-      <div class="spacer" style="height: 40px;"></div>
-      <button id="login-button1" class="button button-stable  button-block">Log in</button>
-      <a href-inappbrowser="/signup" id="login-button2" class="button button-positive  button-block button-clear">Or create an account</a>
+
+        <label class="btnLogin" >
+          <button class="button button-block" id="logear" type="submit">Logear</button>
+        </label>
+      </div>
     </form>
+    <center><ion-spinner icon="android" class="invisible" id="spinner"></ion-spinner></center>
+    <button id="login-button4" style="font-weight:600;color:#000000" class="button button-block button-positive button-clear" onclick="location.href='#/registro'">¿No tenes cuenta? Registrate</button>
+
   </ion-content>
 </ion-view>

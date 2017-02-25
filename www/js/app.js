@@ -5,7 +5,19 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives','app.services','firebase'])
+angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives','app.services','firebase','mdo-angular-cryptography','ngCordova','ion-floating-menu'])
+
+.value('esAdminVal', {
+    admin: false
+})
+
+.value('infoUser', {
+    infoUser: null
+})
+
+.config(['$cryptoProvider', function($cryptoProvider){
+    $cryptoProvider.setCryptographyKey('ABCD123');
+}])
 
 .config(function($ionicConfigProvider, $sceDelegateProvider){
   
@@ -14,7 +26,45 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives
 
 })
 
+.service('getBatalla', function () {
+        var batalla = {
+                        "P1":"",
+                        "P2":"",
+                        "jugador1":[0,0,0,0],
+                        "jugador2":[0,0,0,0],
+                        "Seljugador1":[0,0,0,0],
+                        "Seljugador2":[0,0,0,0],
+                        "acertoJ1":false,
+                        "acertoJ2":false,
+                        "monto": 0,
+                        "turno": ""
+                    
+                      };
 
+        return {
+            getProperty: function () {
+                return property;
+            },
+            setProperty: function(value) {
+                property = value;
+            },
+            nuevaBatalla:function(){
+              property = {
+                        "P1":"",
+                        "P2":"",
+                        "jugador1":[0,0,0,0],
+                        "jugador2":[0,0,0,0],
+                        "Seljugador1":[0,0,0,0],
+                        "Seljugador2":[0,0,0,0],
+                        "acertoJ1":false,
+                        "acertoJ2":false,
+                        "monto": 0,
+                        "turno": ""
+                      }
+              return property;
+            }
+        };
+})
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard

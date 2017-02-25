@@ -5,6 +5,19 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
 
+    <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDhrEJ596_edVinnK90EpM9pMlbNFs75y8",
+        authDomain: "batalla-naval-de-la-muerte.firebaseapp.com",
+        databaseURL: "https://batalla-naval-de-la-muerte.firebaseio.com",
+        storageBucket: "batalla-naval-de-la-muerte.appspot.com",
+        messagingSenderId: "881857847589"
+      };
+      firebase.initializeApp(config);
+    </script>
+
     
     
     <script src="lib/ionic/js/ionic.bundle.js"></script>
@@ -53,9 +66,18 @@
 
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
+    <script src="js/CtrlLoginReg.js"></script>
+    <script src="js/CtrlBatalla.js"></script>
+    <script src="js/CtrlCreditos.js"></script>
     <script src="js/routes.js"></script>
     
-     
+	<script type="text/javascript" src="js/aes.js"></script>
+	<script type="text/javascript" src="js/mdo-angular-cryptography.js"></script>
+  <script type="text/javascript" src="js/qrcode/qrcode.js"></script>
+
+  <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+
+	 
     <script src="js/directives.js"></script>
      
     <script src="js/services.js"></script>
@@ -69,6 +91,9 @@
     <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
     <!-- AngularFire -->
     <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+    
+    <link href="lib/ion-floating-menu/dist/ion-floating-menu.css" rel="stylesheet" type="text/css">
+    <script src="lib/ion-floating-menu/dist/ion-floating-menu.js" type="text/javascript"></script>
 
   </head>
   <body ng-app="app" animation="slide-left-right-ios7">
