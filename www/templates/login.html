@@ -4,7 +4,7 @@
     <div class="buttons">
     </div>
   </ion-header-bar>
-  <ion-content ">
+  <ion-content>
     <form ng-submit="Loguear()" >
       <div class="list login" >
         <label class="item item-input  inputLogin" >
@@ -20,10 +20,12 @@
         <label class="btnLogin" >
           <button class="button button-block" id="logear" type="submit">Logear</button>
         </label>
+        
       </div>
     </form>
     <center><ion-spinner icon="android" class="invisible" id="spinner"></ion-spinner></center>
     <button id="login-button4" style="font-weight:600;color:#000000" class="button button-block button-positive button-clear" onclick="location.href='#/registro'">¿No tenes cuenta? Registrate</button>
-
+    <button ng-click="userLog(0)" style="font-weight:600;color:#000000" class="button button-block button-positive button-clear">Loguear como User</button>
+    <button ng-click="userLog(1)" style="font-weight:600;color:#000000" class="button button-block button-positive button-clear">Loguear como Admin</button>
   </ion-content>
 </ion-view>

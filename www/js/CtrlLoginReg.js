@@ -6,6 +6,7 @@ angular.module('app.controllers')
   $scope.loginData = {};
   $scope.Loguear = function(){
 
+
     /*Validar datos de logueo*/
     if($scope.loginData.email == null){ 
       alert("Ingrese un email");
@@ -84,7 +85,16 @@ angular.module('app.controllers')
         console.info(error);
       });
   }
-
+  $scope.userLog = function(cual){
+    switch(cual){
+      case 0:    $scope.loginData.email = "user@user.com";
+                $scope.loginData.password = "user123";
+                break;
+      case 1:    $scope.loginData.email = "julbarrientos@gmail.com";
+                  $scope.loginData.password = "qaswed12";
+                  break;
+    }
+  }
 })
 
 .controller('registroCtrl', function($scope, $firebaseArray,$ionicPopup,$timeout,Usuarios) {
